@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { AuthProvider } from '@/contexts/AuthContext'
 import './globals.css'
+import Layout from './components/layout/layout'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Medium Clone - Share your stories',
+  title: {
+    default: 'Medium Clone - Share your stories',
+    template: '%s | Medium Clone'
+  },
   description: 'A modern publishing platform for sharing ideas and stories',
 }
 
@@ -17,9 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="min-h-screen bg-white">
-          {children}
-        </div>
+        <AuthProvider>
+          <Layout>
+            {children}
+          </Layout>
+        </AuthProvider>
       </body>
     </html>
   )
