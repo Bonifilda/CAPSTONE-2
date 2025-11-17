@@ -13,9 +13,12 @@
     "@heroicons/react": "^2.2.0",
     "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.81.1",
+    "jodit-react": "^5.2.38",
     "next": "16.0.3",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
